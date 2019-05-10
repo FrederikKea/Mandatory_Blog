@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/Blogpost">AWESOME BLOGPOST.DK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Blogpost">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="my-4">Blog Posts </h1>
+
+            <!-- Blog Post -->
+            <div class="card mb-4" th:each="Blog : ${blogpost}">
+                <img class="card-img-top" src="http://placehold.it/750x200" alt="Card image cap">
+                <div class="card-body" >
+                    <h2 class="card-title" th:text="${Blog.blogpost_name}"></h2>
+                    <p class="card-text" th:text="${Blog.blogpost}"></p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted" th:text="${Blog.date}" >
+
+                    <a href="#">Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- kilde: https://startbootstrap.com/templates/blog-home/ -->
+
+<!--
+<div class="container">
+    <h1>Opret Blog Post</h1>
+
+    <form th:action="@{/Blogpost}" th:object="${blog}" method="post">
+
+        <p>Blogpost overskrift: <input type="text" th:field="*{blogpost_name}" /></p>
+        <P>Blogpost: </P>
+        <textarea rows="4" cols="50" th:field="*{blogpost}"> </textarea>
+
+        <p>Date: <input type="text" th:field="*{date}" /></p>
+        <p><input type="submit" class="btn btn-primary" value="Upload blog post" /> <input type="reset" class="btn btn-primary" value="Reset" /></p>
+    </form>
+
+
+</div>
+-->
+
+<!--
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+-->
+</body>
+</html>

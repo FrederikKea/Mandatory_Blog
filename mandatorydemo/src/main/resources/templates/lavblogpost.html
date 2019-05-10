@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lavblogpost</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/Blogpost">AWESOME BLOGPOST.DK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Blogpost">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<div class="container">
+    <h1>Opret Blog Post</h1>
+
+    <form  th:action="@{/Blogpost}" th:object="${blog}" method="post">
+
+        <p>Blogpost overskrift: <input type="text" th:field="*{blogpost_name}" /></p>
+        <P>Blogpost: </P>
+        <textarea rows="4" cols="50" th:field="*{blogpost}"> </textarea>
+
+        <p>Date: <input type="text" th:field="*{date}" /></p>
+        <p><input type="submit" class="btn btn-primary" value="Upload blog post" /> <input type="reset" class="btn btn-primary" value="Reset" /></p>
+    </form>
+
+
+</div>
+
+
+</body>
+</html>
+

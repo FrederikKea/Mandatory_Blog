@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.mandatorydemo.MandatorydemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.261 s - in com.example.mandatorydemo.MandatorydemoApplicationTests
